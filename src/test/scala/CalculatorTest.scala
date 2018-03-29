@@ -10,6 +10,7 @@ class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers {
     println("an instance of Calculator is created as the subject")
   }
 
+  // instance methods
   describe("Calculator#cube") {
     it("should cube a passed number") {
       assert(subject.cube(3) === 27)
@@ -32,6 +33,15 @@ class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers {
   describe("Calculator.divide") {
     it("should divide a given number by a divisor") {
       Calculator.divide(4,2) shouldEqual 2
+    }
+
+    // nested describe to show context
+    describe("with zero as a divisor") {
+      it("should throw an exception") {
+        intercept[ArithmeticException] {
+          Calculator.divide(4,0)
+        }
+      }
     }
   }
 }
