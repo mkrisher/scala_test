@@ -1,0 +1,7 @@
+[0m[[0minfo[0m] [0m[32mCubeCalculatorTest:[0m[0m
+[0m[[0minfo[0m] [0m[32mCubeCalculator#cube[0m[0m
+[0m[[0minfo[0m] [0m[32m- should cube a passed number[0m[0m
+[0m[[0minfo[0m] [0m[32mCubeCalculator#times3[0m[0m
+[0m[[0minfo[0m] [0m[32m- should multiply a number by three[0m[0m
+[0m[[0minfo[0m] [0m[32mCubeCalculator.multiplier[0m[0m
+[0m[[0minfo[0m] [0m[32m- should multiple a given number by a multiplier[0m[0m
