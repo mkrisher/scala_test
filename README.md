@@ -1,4 +1,4 @@
-# scala_test
+# An intro to ScalaTest for Rubyists
 
   A repo/playground for exploring various aspects of ScalaTest
 
@@ -20,3 +20,5 @@
   The second commit shows an example of how to test a class (instance methods and class functions) 
   using FunSpec, which is similar to RSpec for Ruby
 
+  A later commit adds the equivalent Ruby and RSpec classes and specs as comments at the bottom of 
+  the Scala files for comparison
