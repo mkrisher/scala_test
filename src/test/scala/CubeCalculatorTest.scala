@@ -1,9 +1,15 @@
 import org.scalatest.FunSpec
+import org.scalatest.BeforeAndAfter
 import com.mikekrisher.scala_test._
 
-class CubeCalculatorTest extends FunSpec {
+class CubeCalculatorTest extends FunSpec with BeforeAndAfter {
 
-  val subject: CubeCalculator = new CubeCalculator
+  var subject: CubeCalculator = _
+
+  before {
+    subject = new CubeCalculator
+    println("an instance of CubeCalculator is created as the subject")
+  }
 
   describe("CubeCalculator#cube") {
     it("should cube a passed number") {
