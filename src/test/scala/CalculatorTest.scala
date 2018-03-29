@@ -45,3 +45,49 @@ class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers {
     }
   }
 }
+
+/*
+ *  // RSpec version of tests
+ *
+ *  require Calculator
+ *
+ *  RSpec.describe Calculator do
+ *    subject { Calculator.new }
+ *
+ *    before do
+ *      @calculator = subject
+ *    end
+ *
+ *    describe "#cube" do
+ *      it "should cube the given number" do
+ *        expect(subject.cude(3)).to equal(27)
+ *      end
+ *    end
+ *
+ *    describe "#time3" do
+ *      it "should multiply the given number be 3" do
+ *        expect(subject.times3(4)).to eq(12)
+ *      end
+ *    end
+ *
+ *    describe "self.multiply" do
+ *      it "should multiply a given number by a multiplier" do
+ *        expect(described_class.multiply(2,4)).to eq(8)
+ *      end
+ *    end
+ *
+ *    describe "self.divide" do
+ *      it "should divide a given number by a divisor" do
+ *        described_class.divide(4,2).should eq(2)
+ *      end
+ *
+ *      context "with zero as the divisor" do
+ *        it "should throw an exception" do
+ *          expect {
+ *            described_class.divide(4,0)
+ *          }.to raise_error
+ *        end
+ *      end
+ *    end
+ *  end
+ */
