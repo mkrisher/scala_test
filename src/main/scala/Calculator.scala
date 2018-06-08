@@ -1,4 +1,5 @@
 package com.mikekrisher.scala_test
+import java.io._
 
 // Scala version of class
 
@@ -12,6 +13,14 @@ class Calculator {
   def times3(x: Int) = 
   {
     x * 3
+  }
+
+  def render(text: String, buffer: BufferedWriter): Boolean = 
+  {
+    buffer.write(text)
+    buffer.close()
+
+    return true
   }
 }
 
@@ -47,6 +56,10 @@ object Calculator {
  *
  *   def times3(x)
  *      x * 3
+ *   end
+ *
+ *   def render(text)
+ *     File.write(text) // not the same API as a Scala
  *   end
  * end
  */

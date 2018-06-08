@@ -1,7 +1,15 @@
 import org.scalatest.{FunSpec, BeforeAndAfter, Matchers}
+import org.scalatest.mock.MockitoSugar
+
 import com.mikekrisher.scala_test._
 
-class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers {
+import org.mockito.ArgumentCaptor
+import org.mockito.Matchers.any
+import org.mockito.Mockito._
+
+import java.io._
+
+class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers with MockitoSugar {
 
   var subject: Calculator = _
 
@@ -20,6 +28,16 @@ class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers {
   describe("Calculator#times3") {
     it("should multiply a number by three") {
       assert(subject.times3(4) === 12)
+    }
+  }
+
+  describe("Calculator#render") {
+    it("should write something to disk using an IO object") {
+      val text   = "foo"
+      // create a mock object to receive write and close message
+      val buffer = mock[BufferedWriter]
+
+      assert(subject.render(text, buffer) === true)
     }
   }
 
@@ -67,6 +85,13 @@ class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers {
  *    describe "#time3" do
  *      it "should multiply the given number be 3" do
  *        expect(subject.times3(4)).to eq(12)
+ *      end
+ *    end
+ *
+ *    describe "#render" do
+ *      it "should write contents to a buffer" do
+ *        expect(File).to receive(:write).and_return(true)
+ *        expect(subject.render("foo")).to eq(true)
  *      end
  *    end
  *
