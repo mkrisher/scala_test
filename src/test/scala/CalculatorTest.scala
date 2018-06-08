@@ -15,10 +15,22 @@ class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers with Mock
 
   before {
     subject = new Calculator
-    println("an instance of Calculator is created as the subject")
+    println(s"a Calculator instance named ${subject.name.getOrElse("unknown")} is created as the subject")
   }
 
   // instance methods
+  describe("Calculator#name") {
+    it("should return the name if passed into the constructor") {
+      subject = new Calculator(Some("my calculator"))
+      assert(subject.name.getOrElse("not set") == "my calculator")
+    }
+
+    it("should return None if it is not passed into the constructor") {
+      subject = new Calculator
+      assert(subject.name == None) // frowned upon in scala to use null
+    }
+  }
+
   describe("Calculator#cube") {
     it("should cube a passed number") {
       assert(subject.cube(3) === 27)
@@ -76,9 +88,20 @@ class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers with Mock
  *      @calculator = subject
  *    end
  *
+ *    describe "#name" do
+ *      it "should set the name if passed in" do
+ *         subject = Calculator.new("my calculator")
+ *         expect(subject.name).to eq("my calculator")
+ *      end
+ *
+ *      it "should set name to null by default" do
+ *         expect(subject.name).to eq(null)
+ *      end
+ *    end
+ *
  *    describe "#cube" do
  *      it "should cube the given number" do
- *        expect(subject.cude(3)).to equal(27)
+ *        expect(subject.cude(3)).to eq(27)
  *      end
  *    end
  *
