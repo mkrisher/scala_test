@@ -4,7 +4,7 @@ import java.io._
 // Scala version of class
 
 // class with instance methods
-class Calculator {
+class Calculator(val name:Option[String] = None) {
   def cube(x: Int) = 
   {
     x * x * x
@@ -42,6 +42,12 @@ object Calculator {
  * // Ruby version of class
  *
  * class Calculator
+ *   attr_accessor :name
+ *
+ *   def intialize(name = null)
+ *      @name = name
+ *   end
+ *
  *   def self.multiply(x, multiplier)
  *     x * multiplier
  *   end

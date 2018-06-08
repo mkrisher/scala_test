@@ -12,6 +12,10 @@
 
   `test`
 
+  or
+
+  `test:testOnly *CaculatorTest`
+
 # Notes
 
   The first commit includes the scaffolding of the project built 
@@ -22,3 +26,11 @@
 
   A later commit adds the equivalent Ruby and RSpec classes and specs as comments at the bottom of 
   the Scala files for comparison
+
+  A later commit includes an example of mocking an object using Mockito
+
+  A later commit includes an example of a Scala Option. Nulls are frowned upon in Scala. So rather 
+  than doing null checks, Scala has an Option type. If you do not set a value, the Option will 
+  return None. Option in some ways is the equivalent of the Ruby ||= operator. If an Option has 
+  a value, it is wrapped in a Some object. You get to the actual value using .getOrElse or .map.
+
