@@ -53,6 +53,19 @@ class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers with Mock
     }
   }
 
+  describe("Calculator#squares") {
+    it("should square a single number in a list") {
+      val nums = List(2)
+      assert(subject.squares(nums) === List(4))
+    }
+
+    it("should square a list of numbers") {
+      val nums = List(2,4)
+      assert(subject.squares(nums) === List(4,16))
+    }
+  }
+
+
   // class functions
   describe("Calculator.multiplier") {
     it("should multiple a given number by a multiplier") {
@@ -115,6 +128,18 @@ class CalculatorTest extends FunSpec with BeforeAndAfter with Matchers with Mock
  *      it "should write contents to a buffer" do
  *        expect(File).to receive(:write).and_return(true)
  *        expect(subject.render("foo")).to eq(true)
+ *      end
+ *    end
+ *
+ *    describe "#squares" do
+ *      it "should square a single number in an array" do
+ *         numbers = [2]
+ *         expect(subject.squares(numbers)).to eq([4])
+ *      end
+ *
+ *      it "should square all numbers in an array" do
+ *         numbers = [2,4]
+ *         expect(subject.squares(numbers)).to eq([4,16])
  *      end
  *    end
  *

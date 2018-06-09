@@ -4,7 +4,7 @@ import java.io._
 // Scala version of class
 
 // class with instance methods
-class Calculator(val name:Option[String] = None) {
+class Calculator(val name: Option[String] = None) {
   def cube(x: Int) = 
   {
     x * x * x
@@ -21,6 +21,13 @@ class Calculator(val name:Option[String] = None) {
     buffer.close()
 
     return true
+  }
+
+  def squares(numbers: List[Int]): List[Int] = 
+  {
+    for {
+      result <- numbers.map(num => num * num)
+    } yield result
   }
 }
 
@@ -66,6 +73,10 @@ object Calculator {
  *
  *   def render(text)
  *     File.write(text) // not the same API as a Scala
+ *   end
+ *
+ *   def squares(numbers)
+ *     numbers.map { |num| num * num }
  *   end
  * end
  */
